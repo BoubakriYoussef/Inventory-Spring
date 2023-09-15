@@ -15,6 +15,10 @@
             <th>Name</th>
             <th>Price</th>
             <th>Category</th>
+            <th>Modify</th>
+            <th>Delete</th>
+
+
             </thead>
             <tbody>
                 <th:block th:each="product : ${listProducts}">
@@ -23,6 +27,12 @@
                         <td th:text="${product.name}"></td>
                         <td th:text="${product.price}"></td>
                         <td th:text="${product.category.name}"></td>
+                        <td>
+                            <a th:href="@{'/products/edit/'+${product.id}}">Edit</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/products/delete/'+${product.id}}">Delete</a>
+                        </td>
                     </tr>
                 </th:block>
             </tbody>
